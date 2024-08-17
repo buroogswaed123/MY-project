@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Paragraphs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+            <p id="Paragraph1" class="highlight"> Add Department!</p>
+            <input type="text" id="classInput" placeholder="Enter Class Name">
+            <button onclick="addClass()"> Add Class</button> 
+            <div class="paragraph-container">
+                <p id="paragraph1" class="paragraph">Paragraph1</p>
+                <p id="paragraph2" class="paragraph">Paragraph2</p>
+                <p id="paragraph3" class="paragraph">Paragraph3</p>
+            </div>
+ 
+            <div class="button-container">
+                <button class="button" onclick="toggleVisibility('paragraph1')">Show/hide paragraph 1</button>
+                <button class="button" onclick="toggleVisibility('paragraph2')">Show/hide paragraph 2</button>
+                <button class="button" onclick="toggleVisibility('paragraph3')">Show/hide paragraph3</button>
+            </div>
+    </div>
+            <div class="container_button">
+                <button id="myButton">Click Me</button>
+            </div>
+        
+    <script>
+            const departmentName = document.getElementById("classInput").value;
+            const paragraph = document.createElement("paragraph");
+            paragraph.classList.add("paragraph");
+            function toggleVisibility(elementId) {
+            const element = document.getElementById(elementId);
+            element.classList.toggle('hidden');
+        }
+        const myButton = document.getElementById("myButton");
+
+myButton.addEventListener("click", function() {
+    myButton.textContent = "Clicked!";
+    myButton.style.pointerEvents = "none";
+});
+    </script>
+</body>
+</html>
